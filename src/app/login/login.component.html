@@ -1,0 +1,78 @@
+<div class="back text-light">
+   
+  <div class="login-wrap active">
+    <div
+      class="form-box login-form d-flex justify-content-end ms-auto pe-lg-5 me-lg-5 ms-5 p-lg-5 p-md-5 p-3"
+    >
+      <div class="me-lg-5 mt-5 pe-lg-5">
+        <div class="form-title me-5 mt-5">
+          <h1 class="fw-bolder me-6">Welcome back !</h1>
+          <h6 class="form-subtitle mb-4 fw-light mt-3">
+            Please login to access your account
+          </h6>
+        </div>
+        <form
+          name="myform"
+          class="multi-pages"
+          [formGroup]="loginForm"
+          (ngSubmit)="submitlogin(loginForm)"
+     
+        >
+        <P  class="text-danger">{{errormsg}} </P>
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="text-danger">
+          <p *ngIf="loginForm.get('email')?.getError('required')">Email is required</p>
+      </div>
+      <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="text-danger">
+        <p *ngIf="loginForm.get('password')?.getError('required')">Password is required</p>
+    </div>
+          <div class="form- mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control form-control-sm bg-transparent border-3"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="form- mb-4">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control form-control-sm bg-transparent border-3"
+              id="password"
+              formControlName="password"
+            />
+          </div>
+         <div class="forgetpass text-end">
+          <a class="ms-auto" (click)="otpnavigate()">Forgot password</a>
+         </div>
+
+          <div class="mt-5 text-center">
+            <button
+              id="login-btn"
+              class="btn primaryBg text-white rounded-pill fs-4"
+              [disabled]="!loginForm.valid"
+            >
+              Get Started
+            </button>
+          </div>
+          
+  
+        </form>
+        <div class="form-link mt-4 text-center">
+          <span
+            >Don't have an account?
+            <a
+              id="toggle-signup"
+              class="register-link p-0 border-0 bg-transparent primaryColor mb-5"
+              (click)="register()"
+  
+              >Register</a
+            ></span
+          >
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>

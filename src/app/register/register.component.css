@@ -1,0 +1,52 @@
+
+
+
+.back{  background: url("../../assets/new.png")no-repeat;
+    background-size: 100% 100% ;
+    height: fit-content;
+
+
+   
+}
+
+.inner-row{
+    height: 100vh;
+    width: 100%;
+
+}
+.primaryBg{
+
+background-color: #9C4BCC;
+padding: 10px 25px;
+font-size: 18px;
+
+
+
+
+}
+.primaryColor{
+    color:#fff;
+} 
+
+
+.back a{
+    color: #9C4BCC;
+}
+.form-control{
+    border-color:#CCBEFF  ;
+    border-radius: 10px !important;
+    color: #fff !important;
+    padding: 10px;
+    width: 95%;
+
+ 
+}
+.form-control::placeholder { 
+    color:white;
+    opacity: 1;
+}
+    
+
+
+
+

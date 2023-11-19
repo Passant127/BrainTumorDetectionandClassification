@@ -1,0 +1,40 @@
+.back {
+  background: url("../../assets/new.png") no-repeat;
+  background-size: 100% 100%;
+  height: 110vh;
+}
+
+.inner-row {
+  height: 100vh;
+  width: 100%;
+}
+.register-link{
+  cursor: pointer;
+}
+.primaryBg {
+  background-color: #9c4bcc;
+  padding: 10px 25px;
+  font-size: 18px;
+}
+.primaryColor {
+  color: #fff;
+}
+
+.back a {
+  color: #9c4bcc;
+
+}
+.form-control {
+  border-color: #ccbeff;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding: 7px;
+}
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+.forgetpass a{
+  cursor: pointer;
+
+}

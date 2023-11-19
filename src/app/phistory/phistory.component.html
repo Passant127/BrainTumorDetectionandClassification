@@ -1,0 +1,38 @@
+<div class="profile overflow-auto">
+
+        <nav class="navbar navbar-expand-lg sticky-top">
+          <div class="container">
+            <div class="collapse navbar-collapse" id="main">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link p-2 p-lg-3 mt-5" (click)="back()">Back</a>
+                </li>
+              </ul>
+            </div>
+      
+            <a class="navbar-brand p-2 p-lg-3 mt-5" href="#">
+              <img src="../../assets/Logofinal2.png" width="75" alt="" />
+            </a>
+          </div>
+        </nav>
+      
+   <h2 class="text-white text-center fw-bold mt-5">Please double click to see History on table</h2>
+      
+    <table class="m-auto text-white mt-5 mb-5 " (dblclick)=" phistory()">
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>tumorous</th>
+            <th>Classification Type</th>
+            <th>Created at</th>
+            
+        </tr>
+        <tr class="" *ngFor="let c of new.data; let i = index">
+            <td>{{new.data[i].id}}</td>
+            <td><img [src]="new.data[i].image" width="50" alt=""></td>
+            <td>{{new.data[i].timorous}}</td>
+            <td>{{new.data[i].classificationType}}</td>
+            <td>{{new.data[i].createdAt}}</td>
+        </tr>
+    </table>
+    </div>

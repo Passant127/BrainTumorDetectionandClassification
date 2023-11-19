@@ -1,0 +1,207 @@
+<nav class="navbar navbar-expand-lg fixed-top stick-top">
+  <div class="container-fluid">
+    <div class="logo img-fluid">
+      <img src="../../assets/Logofinal2.png" class="ps-5" />
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#main"
+      aria-controls="main"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main">
+      <ul class="navbar-nav m-auto mb-3 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link p-lg-3 active text-white fs-5 mb-2"
+            aria-current="page"
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#about"
+            routerLink="#about"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#services"
+            >Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav me-5 mb-3 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="login nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            (click)="login()"
+            *ngIf="!login_Logout"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            class="login nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            (click)="logout()"
+            *ngIf="login_Logout"
+            >Logout</a
+          >
+        </li>
+        <li>
+          <a
+            class="login nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            (click)=" navigatetoModel()"
+            *ngIf="login_Logout"
+            >Model</a
+          >
+        </li>
+        <li>
+          <a
+            class="login nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            (click)=" navigatetoProfile()"
+            *ngIf="login_Logout"
+            >Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="register nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            *ngIf="!login_Logout"
+            (click)="ocr()"
+            >Register</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="home d-flex justify-content-between align-items-center">
+  <div class="m-auto mb-2 mb-lg-0 mt-4">
+    <div class="w-50 text-light">
+      <h1 class="fw-bolder">Welcome To Our BTD&C</h1>
+      <p class="fs-6 text-light w-75 mb-5 mt-4">
+        This website is for Brain Tumor Detection and Classification. It is
+        build for doctors to detect type of brain tumor and classify it . Doctor
+        has to put MRI and will get back the information for it.
+      </p>
+      <a class="btn rounded-pill primaryBg text-light" href="#">Read More</a>
+    </div>
+  </div>
+</div>
+
+<div class="m-auto about p-5" id="about">
+  <div class="all container m-auto">
+    <div class="row">
+      <h2 class="text-center fw-bolder mt-5 mb-2">About</h2>
+
+      <div class="col-md-6 mt-5 pt-5 fs-5 d-flex">
+        <p class="mt-5">
+          Brain tumors occur when abnormal cells form within the brain. Early
+          detection using Magnetic Resonance Imaging (MRI) may increase
+          patient’s survival rate. A study proposes to classify and detect brain
+          tumors using machine learning using convolutional neural networks
+          (CNN) and its architectures which is a type of deep learning
+          algorithm. The study used 3 of the most common brain tumors glioma
+          tumor, meningioma, and pituitary tumor.
+        </p>
+      </div>
+
+      <div class="col-md-6 col-sm-12 ms-auto text-center image-section">
+        <img
+          src="../../assets/aboutimg.png"
+          alt="Some image"
+          class="ms-lg-5 ps-lg-5 w-100"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="services p-5" id="services">
+  <h2 class="form-title m-auto text-center fw-bolder mt-5">Services</h2>
+  <div class="container m-auto">
+    <div class="row mt-5 mb-5">
+      <div
+        class="col-md-6 text-center"
+        *ngFor="let res of results; let i = index"
+      >
+        <img [src]="res.src" class="image w-75" alt="" />
+        <h3 class="mt-4 title mb-5">{{ res.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ContactUs" id="contact">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-lg-7">
+      <div class="mb-5">
+        <h2 class="form-title text-center fw-bolder mt-5">Contact US</h2>
+      </div>
+      <div class="row">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder=" enter your name"
+            aria-label="name"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="email"
+            class="form-control"
+            placeholder=" enter your Email"
+            aria-label="email "
+          />
+        </div>
+        <div class="mb-4 mt-5">
+          <textarea
+            class="textarea form-control"
+            rows="8"
+            placeholder=" Your Message.... "
+          ></textarea>
+        </div>
+
+        <div class="col-auto">
+          <div class="mb-5 fs-6 fw-bolder">
+            <button
+              id="Upload-btn"
+              value="submit"
+              class="select-image btn d-grid gap-2 col-3 mx-auto text-white"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-3"></div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center pb-2">
+      <p class="fs-4 text-white">&copy; Copyright All Rights Reserved</p>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</div>

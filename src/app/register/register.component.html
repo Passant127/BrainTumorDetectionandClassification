@@ -1,0 +1,110 @@
+<div class=" back text-light  ">
+ 
+    <div class="signup container">
+    <div class=" registration-form ms-auto pe-lg-5 me-lg-5  w-75 p-lg-5    p-md-5 p-3">
+        <div class=" ms-auto w-50">
+          <div class="form-title me-5  ">
+              <h1 class="fw-bolder me-4">Welcome !</h1>
+              <h6 class="form-subtitle mb-4 fw-light">Please register to have an account</h6>
+          </div>
+     
+          <div class="erro">
+            <p class="text-danger fs-6">{{err}}</p>
+         </div>
+          <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('name')?.getError('required')">name is required</p>
+        </div>
+        <div *ngIf="registerForm.get('userName')?.errors && registerForm.get('userName')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('userName')?.getError('required')">Username is required</p>
+        </div>
+    
+        <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('email')?.getError('required')">Email is required</p>
+        </div>
+        <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('password')?.getError('required')">Password is required</p>
+            <p *ngIf="registerForm.get('password')?.getError('minlength')">Password is minimum 6 characters</p>
+        </div>
+        <div *ngIf="registerForm.get('Gender')?.errors && registerForm.get('Gender')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('Gender')?.getError('required')">Gender is required</p>
+        </div>
+        <div *ngIf="registerForm.get('idintityCardNumber')?.errors && registerForm.get('idintityCardNumber')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('idintityCardNumber')?.getError('required')">NationalId is required</p>
+            <p *ngIf="registerForm.get('idintityCardNumber')?.getError('minlength')|| registerForm.get('idintityCardNumber')?.getError('maxlength') ">NationalId is 14 Number</p>
+        </div>
+        <div *ngIf="registerForm.get(' dateOfBirthDay')?.errors && registerForm.get(' dateOfBirthDay')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get(' dateOfBirthDay')?.getError('required')"> Date Of BirthDay is required</p>
+        </div>
+        <div *ngIf="registerForm.get('phoneNumber')?.errors && registerForm.get('phoneNumber')?.touched" class="text-danger">
+            <p *ngIf="registerForm.get('phoneNumber')?.getError('required')">Phone Number is required</p>
+            <p *ngIf="registerForm.get('phoneNumber')?.getError('pattern') ">NationalId is 11 Number</p>
+        </div>
+          <form  class="multi-pages"  [formGroup]="registerForm" (ngSubmit)="onsubmit(registerForm)">
+         
+           <div class="two d-flex">
+      
+            
+            
+            <div class="form- mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-control form-control-sm bg-transparent border-3" id="name" placeholder="enter your name" formControlName="name">
+            </div>
+            <div class="form- mb-3">
+              <label for="userName" class="form-label">User Name</label>
+              <input type="text" name="userName" class="form-control form-control-sm bg-transparent border-3" id="userName" placeholder="enter your user name" formControlName="userName">
+          </div>
+           </div>
+           <div class="two d-flex">
+            <div class="form-  mb-3">
+                <label for="email" class="form-label ">Email</label>
+                <input type="email" class="form-control form-control-sm bg-transparent border-3 " id="email" placeholder="enter your email" formControlName="email" >
+            </div>
+              <div class="form- mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control form-control-sm bg-transparent border-3" id="password" placeholder="enter your password" formControlName="password">
+              </div>
+           </div>
+            <div class="form mb-3">
+                <P>Gender:</P>
+                <div class="gender d-flex justify-content-center ">
+                    <input type="radio" id="Female" name="Gender" value="Female" formControlName="Gender" class="me-2">
+                <label for="Female" class="me-5">Female</label>
+                <input type="radio" id="Male" name="Gender" value="Male" formControlName="Gender" class="me-2">
+                <label for="Male" class="me-5" >Male</label>
+                </div>
+                
+            </div>
+
+     
+              <div class="form- mb-3">
+                <label for="dateOfBirthDay" class="form-label">Date Of Birth</label>
+                <input type="date" name="dateOfBirthDay" class="form-control form-control-sm bg-transparent border-3" id="dateOfBirthDay" formControlName="dateOfBirthDay"  >
+            </div>
+            <div class="form- mb-3">
+                <label for="idintityCardNumber" class="form-label">National ID</label>
+                <input type="text" name="idintityCardNumber" class="form-control form-control-sm bg-transparent border-3 rounded" id="idintityCardNumber" placeholder="enter your Nationalid"  formControlName="idintityCardNumber">
+            </div>
+            <div class="form- mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text" name="phoneNumber" class="form-control form-control-sm bg-transparent border-3 rounded" id="phoneNumber" placeholder="enter your phone number"  formControlName="phoneNumber">
+            </div>
+
+              <div class="mt-3 text-center">
+                  <button id="register-btn" class="btn primaryBg text-white rounded-pill" [disabled]="!registerForm.valid" >Register</button>
+
+              </div>
+          </form>
+          <div class="mt-3 text-center ">
+              <span>Do you have an account? <a id="toggle-login" class=" login-link p-0 border-0 bg-transparent primaryColor " (click)="login()" >Login</a></span>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg stick-top">
+  <div class="container-fluid">
+    <div class="logo img-fluid">
+      <img src="../../assets/Logofinal2.png"  class=" ps-5 ">
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#main"
+      aria-controls="main"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main">
+      <ul class="navbar-nav m-auto mb-3 mb-lg-0">
+          <li class="nav-item">
+          <a
+            class="nav-link p-lg-3 active text-white fs-5 mb-2"
+          
+            (click)="reload()"
+            *ngIf="loading"
+         
+            >Back</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-lg-3 active text-white fs-5 mb-2"
+            aria-current="page"
+            href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#"
+            >Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-white fs-5 mb-2 text-center"
+            href="#"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav me-5 mb-3 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+            href="#"
+            (click)="logout()"
+            >Logout</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link p-2 p-lg-3 text-light mb-2 fs-5 text-center"
+           
+            (click)="profile()"
+            >Profile</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="backUpload">
+  <div class="row pt-5 mt-5 justify-content-center align-items-center">
+    <div class="results text-center" *ngIf="loading">
+      <h4 class="form-subtitle mb-5 fw-bold text-center text-light">
+        Our Results
+      </h4>
+      <img [src]="imagesrc" alt="" />
+      <p class="text-white fs-3 mb-5 mt-3 fw-bolder"> Tumor: {{ tumerous }}</p>
+      <p class="text-white fs-3 mb-5 mt-3 fw-bolder">
+        Classification: {{ classificationType }}
+      </p>
+    </div>
+    <div class="col-lg-7">
+      <div class="me-5 mt-5">
+        <h4 class="form-subtitle mb-4 text-center text-light" *ngIf="!loading">
+          Please upload a photo for MRI and give us minutes to get the result
+        </h4>
+      </div>
+
+      <div class="file-upload mt-5 text-center d-grid gap-2 col-7 mx-auto">
+        <input
+          type="file"
+          enctype="multipart/form-data"
+          (change)="onChange($event)"
+          class="form-control border-3"
+          id="ImageFile"
+          *ngIf="!loading"
+        />
+
+        
+        <label for="ImageFile" *ngIf="!loading"> Upload MRI image </label>
+      </div>
+      <p class="text-center text-white fw-bolder mt-4 " *ngIf="filentred">You entered {{nameofile}}</p>
+    
+      <div
+        class="button-upload mt-5 text-center fs-6 fw-bolder"
+        *ngIf="!loading"
+      >
+        <button
+          id="Upload-btn"
+          value="submit"
+          class="btn btn-secondry rounded-pill d-grid gap-2 col-3 mx-auto primaryBg text-white"
+          (click)="onUpload()"
+          [disabled]="!filefull"
+        >
+          Get Result
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>

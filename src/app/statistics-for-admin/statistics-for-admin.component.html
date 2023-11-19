@@ -1,0 +1,84 @@
+<div class="stat overflow-hidden">
+  <div class="dash d-flex justify-content-between">
+   <img src="../../assets/Logofinal2.png" width="75" class="ms-5" alt="">
+    <p class="text-white fw-bolder fs-3 p-3 text-center">--- Dashboard ---</p>
+    <button class="me-5 btn text-white fs-4 logout" (click)="logout()">Logout</button>
+  </div>
+  <div class=" ">
+    <div class="all">
+      <P class="fs-1 title mt-5 mb-5 fw-bolder text-center">Our Statistics</P>
+      <div
+        class="container-fluid text-center text-white fw-bold m-auto justify-content"
+      >
+        <div class="row mt-5 mb-5">
+          <div class="col-md-3 bg-danger p-3">
+            <p>gliomaRecords</p>
+
+            <p>{{ Alldata.gliomaRecords }}</p>
+          </div>
+          <div class="col-md-3 p-3 bg-primary">
+            <p>pituitary Records</p>
+
+            <p>{{ Alldata.pituitaryRecords }}</p>
+          </div>
+          <div class="col-md-3 p-3 bg-dark">
+            <p>meningioma Records</p>
+
+            <p>{{ Alldata.melingiomaRecords }}</p>
+          </div>
+          <div class="col-md-3 p-3 bg-info">
+            <p>notTumorous Records</p>
+
+            <p>{{ Alldata.notTumorousRecords }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="allcharts text-center">
+      <div class="m-auto">
+        <div class="row ms-2 ps-2">
+          <div class="col-md-5 text-center">
+            <p class="fw-bold text-center fs-4">Line Chart</p>
+            <canvas class="border-3 p-3 mb-5" id="lineChart"></canvas>
+          </div>
+
+          <div class="col-md-5 text-center">
+            <p class="fw-bold text-center fs-4">Bar Chart</p>
+            <canvas id="MyChart" class="mt-4"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="ch2 text-center">
+        <div class="container text-center m-auto">
+          <div class="row ">
+            <div class="col-md-6 text-center">
+              <p class="fw-bold text-center fs-4">Pie Chart</p>
+              <canvas class="border-3 mb-5" id="pie"></canvas>
+            </div>
+
+            <div class="col-md-6">
+              
+              <p class="fw-bold text-center fs-4">Radar Chart</p>
+              <canvas id="radar" class="mb-5 ps-2"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table m-auto w-75">
+      <table class="m-auto text-white mt-5 mb-5">
+        <tr>
+          <th>UserID</th>
+          <th>Doctor Predictions</th>
+        </tr>
+        <tr
+          class=""
+          *ngFor="let c of data1.data.docotrsPredictions; let i = index"
+        >
+          <td>{{ c.item1 }}</td>
+          <td>{{ c.item2 }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

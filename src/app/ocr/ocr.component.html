@@ -1,0 +1,64 @@
+<div class="ocr">
+  <nav class="navbarCard navbar-expand-lg">
+    <div class="container">
+      <div class="collapse navbar-collapse ms-5" id="main">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link p-2 p-lg-3 fs-4" href="#"> Back</a>
+          </li>
+        </ul>
+        <div class="logo img-fluid ms-5">
+          <img src="../../assets/Logofinal2.png" class="mt-2" />
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="backUploadCard text-center">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-7 mt-4">
+        <div class="text-center me-5 mt-5 mb-5">
+          <h1
+            class="form-subtitle welcome mt-1 pt-5 text-center text-light fw-bolder mt-5"
+          >
+            Welcome To Our BTD&C !
+          </h1>
+          <p class="text-decoration-underline fs-3 mb-3 mt-4 text-light">
+            Please Upload Your ID Card
+          </p>
+        </div>
+
+        <div class="input-field mt-3 text-center d-grid gap-2 col-7 mx-auto">
+          <input
+            type="file"
+            class="form-control"
+            id="uploadfileback"
+            (change)="onChange($event)"
+          />
+
+          <br />
+          <label
+            class="fs-4 border-3"
+            enctype="multipart/form-data"
+            for="uploadfileback"
+          >
+            Upload Back Of Id Card
+          </label>
+        </div>
+
+        <p class="text-center text-white fw-bolder mt-4 " *ngIf="filentred">You entered {{filename}}</p>
+        <div class="loading container" *ngIf="loading">
+          <h3 class="text-white text-center mt-3">Loading ...</h3>
+        </div>
+        <div class="mt-4 text-center fs-6 fw-bolder">
+          <button
+            id="Upload-btn"
+            class="select-image btn d-grid gap-2 col-3 mx-auto primaryBg text-white"
+            (click)="onUpload()"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
